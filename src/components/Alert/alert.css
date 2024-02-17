@@ -1,0 +1,32 @@
+@import "../../globals.css";
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    margin-bottom: 15px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    animation: fadeIn 0.4s ease;
+}
+  
+  .alert-text {    
+    color: white;
+  }
+  
+  .alert .closebtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .alert .closebtn:hover {
+    color: black;
+  }
