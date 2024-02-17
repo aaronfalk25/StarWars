@@ -2,41 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@layer base {
+  :root {
+    --background: #EADBC8;
+    --card: #F8F0E5;
+    --border: #DAC0A3;
+    --accent: #0F2C59;
+    --button: #F4E869;
+    --button-hover: #f4e8696d;
+    --font-color: #000000;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  body {
+    background-color: var(--background);
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--font-color);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+  color: var(--accent);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+input {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.search-container button {
+  background-color: var(--button);
+  border: 2px solid var(--border);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: var(--button-hover);
   }
 }
