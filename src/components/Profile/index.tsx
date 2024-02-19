@@ -4,16 +4,17 @@ import Modal from '../Modal'
 import api from '../../api'
 
 interface ProfileProps {
-    key: string,
+    name: string,
     character: Character
 }
 
-const Profile: React.FC<ProfileProps> = ({key, character}) => {
+const Profile: React.FC<ProfileProps> = ({name, character}) => {
 
     const [films, setFilms] = useState<Film[]>([]);
     const [starships, setStarships] = useState<Starship[]>([]);
     const [homeworld, setHomeworld] = useState<Planet>();
 
+    // Helper function to get the identifier from the URL
     function parseUrl(url: string): string {
         return url.split('/').slice(-3,-1).join('/');
     }
@@ -48,7 +49,7 @@ const Profile: React.FC<ProfileProps> = ({key, character}) => {
     }, [character.films, character.starships, character.homeworld])
 
     return (
-        <div id={key} className="profile">
+        <div id={name} className="profile">
             <h2>About me: {character.name}</h2>
             <div className="card">  
                 <p>Height (cm): {character.height}</p>

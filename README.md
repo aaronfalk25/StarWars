@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Star Wars Character Search
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a single page "profile page" for various Star Wars characters in the Star Wars universe.
 
-## Available Scripts
+## Functionality
+This project pulls from [https://swapi.dev/](https://swapi.dev/) to obtain Star Wars universe data. This app implements
+a caching mechanism so that every time the web page is loaded, it will check local storage for character data.
+
+The user can enter their search term in the input box, where upon pressing Enter or clicking the "Search" button, the cached data is checked before then making an API call to retrieve information on the character and their films, starships, and homeworld.
+
+## Components
+This application makes use of the following components:
+1. **Alert** - an alert provides information to the user in a custom message. The alert appears on the bottom of the screen in a red box.
+2. **Loading** - the loading component is a wrapper for a custom loading widget from the 'react-spinners' package.
+3. **Modal** - a modal appears overtop a page, obfuscating the background and functioning as a pop-up. The modal is used for additional character data such as films, starships, and homeworld.
+4. **Profile** - the profile component takes in a Character object as props and renders that character information.
+5. **Search** - the search component takes a character mapping as input and returns search results that can be then processed in a search callback. Additionally, all input validation is handled through the search component, ensuring proper length and that results are found.
+
+## Getting Started
 
 In the project directory, you can run:
-
+### `npm i`
+to install necessary dependencies, then
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+to launch the application on [http://localhost:3000](http://localhost:3000) (or another available port, if 3000 is occupied).
